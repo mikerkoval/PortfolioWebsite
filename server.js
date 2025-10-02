@@ -1,0 +1,35 @@
+const express = require("express");
+const path = require("path");
+const expressLayouts = require("express-ejs-layouts");
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
+// enable layouts
+app.use(expressLayouts);
+app.set("layout", "layout"); // default layout file
+
+// static files
+app.use(express.static(path.join(__dirname, "public")));
+
+// routes
+app.get("/", (req, res) => {
+  res.render("index", { title: "Home" });
+});
+
+app.get("/about", (req, res) => {
+  res.render("about", { title: "About" });
+});
+
+app.get("/projects", (req, res) => {
+  const projects = [
+    { name: "WebGPU Fluid Simulation", desc: "Real-time GPU simulation.", link: "https://github.com/mikoval/webgpu/tree/main/fluids" }
+  ];
+  res.render("projects", { title: "Projects", projects });
+});
+
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+

@@ -26,7 +26,12 @@ app.get("/about", (req, res) => {
 
 app.get("/projects", (req, res) => {
   const projects = [
-    { name: "WebGPU Fluid Simulation", desc: "Real-time GPU simulation.", link: "https://github.com/mikoval/webgpu/tree/main/fluids" }
+      {
+          name: "WebGPU Fluid Simulation",
+          desc: "Real-time GPU-based fluid simulation demonstrating advanced graphics programming.",
+          link: "https://github.com/mikoval/webgpu/tree/main/fluids",
+          image: "/images/webgpu-screenshot.png"
+      },
   ];
   res.render("projects", { title: "Projects", projects });
 });

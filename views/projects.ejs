@@ -1,0 +1,25 @@
+<section>
+  <h2 class="text-3xl font-bold mb-10 text-center">Projects</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <% projects.forEach(p => { %>
+      <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
+        <% if(p.image) { %>
+          <img src="<%= p.image %>" alt="<%= p.name %>" class="w-full h-48 object-cover">
+        <% } %>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100"><%= p.name %></h3>
+          <p class="mt-2 text-gray-600 dark:text-gray-300"><%= p.desc %></p>
+          <a href="<%= p.link %>" target="_blank" class="mt-4 inline-block text-indigo-600 dark:text-indigo-400 font-medium hover:underline">
+            View Project →
+          </a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
+  <div class="text-center mt-12">
+    <a href="https://github.com/mikoval" target="_blank" class="px-6 py-3 border border-indigo-600 text-indigo-600 rounded-lg hover:bg-indigo-100 dark:hover:bg-gray-700 transition">
+      More on GitHub →
+    </a>
+  </div>
+</section>

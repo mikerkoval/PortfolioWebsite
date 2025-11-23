@@ -30,7 +30,7 @@ app.get("/projects", (req, res) => {
           name: "WebGPU Fluid Simulation",
           desc: "Real-time GPU-based fluid simulation demonstrating advanced graphics programming.",
           link: "https://github.com/mikerkoval/FluidSimulation",
-          image: "/images/webgpu-screenshot.png"
+          image: "/images/fluid-sim.png"
       },
   ];
   res.render("projects", { title: "Projects", projects });

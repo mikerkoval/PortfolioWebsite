@@ -32,6 +32,12 @@ app.get("/projects", (req, res) => {
           link: "https://github.com/mikerkoval/FluidSimulation",
           image: "/images/fluid-sim.png"
       },
+      {
+          name: "Japanese Website",
+          desc: "Website for practicing Japanese",
+          link: "http://japanese.mikerkoval.com/",
+          image: "/images/japanese.png"
+      },
   ];
   res.render("projects", { title: "Projects", projects });
 });
